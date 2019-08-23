@@ -53,6 +53,7 @@ class Dog
     them_dogs.id = row[0]
     them_dogs.name = row[1]
     them_dogs.breed = row[2]
+    them_dogs
   end
 
   def self.find_by_id
