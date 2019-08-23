@@ -52,10 +52,7 @@ class Dog
   end
   def self.new_from_db(row)
     # creates an instance with corresponding attribute values
-    them_dogs = self.new
-    them_dogs.id = row[0]
-    them_dogs.name = row[1]
-    them_dogs.breed = row[2]
+    them_dogs = self.new(id: row[0], name: row[1], breed: row[2])
     them_dogs
   end
 
