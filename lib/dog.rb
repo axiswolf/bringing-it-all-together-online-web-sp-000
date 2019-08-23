@@ -46,7 +46,7 @@ class Dog
     # takes in a hash of attributes and uses metaprogramming to create a new dog object.
     # then it uses the #save method to save that dog to the database
     # returns a new dog object
-    dog = Dog.new(name, breed)
+    dog = Dog.new(name: name, breed: breed)
     dog.save
     dog
   end
