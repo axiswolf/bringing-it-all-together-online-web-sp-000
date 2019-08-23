@@ -56,8 +56,9 @@ class Dog
     them_dogs
   end
 
-  def self.find_by_id
+  def self.find_by_id(id)
     # returns a new dog object by id
+    self.new(id: id)
   end
 
   def self.find_or_create_by
