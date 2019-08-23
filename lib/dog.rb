@@ -68,7 +68,7 @@ class Dog
   def self.find_or_create_by(name:, breed:)
     # creates an instance of a dog if it does not already exist
     # when two dogs have the same name and different breed, it returns the correct dog
-    song = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
+    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
    if !dog.empty?
      dog_data = song[0]
      dog = Dog.new(dog_data[0], dog_data[1], dog_data[2])
@@ -93,8 +93,8 @@ class Dog
     # updates the record associated with a given instance
     sql = <<-SQL
     UPDATE dogs
-    SET name = ?, 
-      breed = ? 
+    SET name = ?,
+      breed = ?
     WHERE id = ?
     SQL
     DB[:conn].execute(sql, self.name, self.breed, self.id)
