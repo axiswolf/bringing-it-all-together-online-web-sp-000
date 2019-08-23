@@ -49,8 +49,8 @@ class Dog
     dog = Dog.new(name, breed)
     dog.save
     dog
+    binding.pry
   end
-binding.pry
   def self.new_from_db(row)
     # creates an instance with corresponding attribute values
     them_dogs = self.new
