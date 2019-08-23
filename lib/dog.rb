@@ -68,13 +68,13 @@ class Dog
   def self.find_or_create_by(name:, breed:)
     # creates an instance of a dog if it does not already exist
     # when two dogs have the same name and different breed, it returns the correct dog
-    
+
   end
 
   def self.find_by_name(name)
     # returns an instance of dog that matches the name from the DB
     sql = <<-SQL
-      SELECT * 
+      SELECT *
       FROM dogs
       WHERE name = ?
     SQL
